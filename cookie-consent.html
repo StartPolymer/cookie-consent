@@ -19,52 +19,51 @@ _[Take a look at the component overview for more info](https://www.webcomponents
   <template>
     <style>
       :host {
+        display: block;
         @apply(--cookie-consent);
       }
       #consentToast {
-        @apply(--cookie-consent-toast);
         --paper-toast-color: var(--cookie-consent-text-color, #f1f1f1);
         --paper-toast-background-color: var(--cookie-consent-background-color, #323232);
+        @apply(--cookie-consent-toast);
       }
       #consentToast .text {
-        @apply(--cookie-consent-text);
         color: var(--cookie-consent-text-color, #f1f1f1);
+        @apply(--cookie-consent-text);
       }
       .policy-link {
-        @apply(--cookie-consent-policy-link);
         color: var(--cookie-consent-policy-link-color, var(--light-accent-color));
         text-decoration: none;
+        @apply(--cookie-consent-policy-link);
       }
       .policy-link:hover {
         text-decoration: underline;
       }
       paper-button {
-        @apply(--cookie-consent-buttons);
         margin: 0;
-        padding: 3px 0;
+        padding: 0;
         text-align: center;
-      }
-      paper-button.keyboard-focus {
-        font-weight: normal !important;
+        font-size: 15px;
+        font-weight: 500;
+        @apply(--cookie-consent-buttons);
       }
       .horizontal {
         @apply(--layout-horizontal);
-        padding-top: 10px;
       }
       .flex {
         @apply(--layout-flex);
       }
       #rejectButton {
-        @apply(--cookie-consent-reject-button);
         color: var(--cookie-consent-reject-text-color, var(--disabled-text-color));
         background: var(--cookie-consent-reject-background, transparent);
         --paper-button-ink-color: var(--cookie-consent-reject-ink-color, var(--disabled-text-color));
+        @apply(--cookie-consent-reject-button);
       }
       #acceptButton {
-        @apply(--cookie-consent-accept-button);
         color: var(--cookie-consent-accept-text-color, var(--accent-color));
         background: var(--cookie-consent-accept-background, transparent);
         --paper-button-ink-color: var(--cookie-consent-accept-ink-color, var(--accent-color));
+        @apply(--cookie-consent-accept-button);
       }
     </style>
 
