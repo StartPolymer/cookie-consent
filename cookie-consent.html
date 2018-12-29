@@ -103,7 +103,7 @@ _[Take a look at the component overview for more info](https://www.webcomponents
          * The url of the API to use to retrieve the user location information.
          *
          * You can change it if for some reason the 15,000 queries per hour offered
-         * by [freegeoip.net](https://freegeoip.net/) are not enough for you, or
+         * by [freegeoip.app](https://freegeoip.app/) are not enough for you, or
          * if you prefer to use your own private api.
          *
          * You can also pass an empty string if you want to show the cookie consent
@@ -111,7 +111,7 @@ _[Take a look at the component overview for more info](https://www.webcomponents
          */
         geoIpUrl: {
           type: String,
-          value: 'https://freegeoip.net/json/',
+          value: 'https://freegeoip.app/json/',
         },
         /**
          * The param that contains the country code of the user
@@ -295,14 +295,14 @@ _[Take a look at the component overview for more info](https://www.webcomponents
           // That would mean that our reliable service isn't working!
           // Quit everything to avoid an infinite loop, and show the
           // user the consent dialog anyways to avoid privacy problems.
-          if (this.geoIpUrl === 'https://freegeoip.net/json/') {
+          if (this.geoIpUrl === 'https://freegeoip.app/json/') {
             setTimeout(function() {
               _this.$.consentToast.open();
             }, this.secondsBeforeAppearing * 1000);
           // User defined service is not working,
           // set the default params and try again.
           } else {
-            this.geoIpUrl = 'https://freegeoip.net/json/';
+            this.geoIpUrl = 'https://freegeoip.app/json/';
             this.geoIpParam = 'country_code';
             this.$.checkCountry.generateRequest();
           }
